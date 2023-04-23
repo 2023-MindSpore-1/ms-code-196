@@ -1,0 +1,565 @@
+# 1.This file shows the parsed IR info when graph evaluating failed to help find the problem.
+# 2.You can search the last `------------------------>` to the node which is inferred failed.
+# 3.Refer to https://www.mindspore.cn/search?inputValue=analyze_fail.dat to get more instructions.
+# ===============================================================================
+
+# [No.1] construct_wrapper.8493
+# In file /mnt/sda1/xzstu/ly/SememeWSD-main/bert/src/bert_for_pre_training.py(272)/    def construct(self,/
+funcgraph fg_8493(
+        %para1 : Tensor(I64)[1, 129]    # input_ids
+        , %para2 : NoneType    # input_mask
+        , %para3 : NoneType    # token_type_id
+        , %para4 : Tensor(I64)[1, 7]    # masked_lm_positions
+        , %para5 : Ref[Tensor(F32)][21128]    # lamb_m.bert.cls1.output_bias
+        , %para6 : Ref[Tensor(F32)][21128, 768]    # lamb_m.bert.bert.bert_embedding_lookup.embedding_table
+        , %para7 : Ref[Tensor(F32)][768]    # lamb_m.bert.cls1.layernorm.gamma
+        , %para8 : Ref[Tensor(F32)][768]    # lamb_m.bert.cls1.layernorm.beta
+        , %para9 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.dense.bias
+        , %para10 : Ref[Tensor(F32)][768, 768]    # lamb_m.bert.bert.dense.weight
+        , %para11 : Ref[Tensor(F32)][768]    # lamb_m.bert.cls1.dense.bias
+        , %para12 : Ref[Tensor(F32)][768, 768]    # lamb_m.bert.cls1.dense.weight
+        , %para13 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_embedding_postprocessor.layernorm.gamma
+        , %para14 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_embedding_postprocessor.layernorm.beta
+        , %para15 : Ref[Tensor(F32)][2, 768]    # lamb_m.bert.bert.bert_embedding_postprocessor.token_type_embedding.embedding_table
+        , %para16 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.0.output.layernorm.gamma
+        , %para17 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.0.output.layernorm.beta
+        , %para18 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.1.output.layernorm.gamma
+        , %para19 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.1.output.layernorm.beta
+        , %para20 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.2.output.layernorm.gamma
+        , %para21 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.2.output.layernorm.beta
+        , %para22 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.3.output.layernorm.gamma
+        , %para23 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.3.output.layernorm.beta
+        , %para24 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.4.output.layernorm.gamma
+        , %para25 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.4.output.layernorm.beta
+        , %para26 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.5.output.layernorm.gamma
+        , %para27 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.5.output.layernorm.beta
+        , %para28 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.6.output.layernorm.gamma
+        , %para29 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.6.output.layernorm.beta
+        , %para30 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.7.output.layernorm.gamma
+        , %para31 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.7.output.layernorm.beta
+        , %para32 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.8.output.layernorm.gamma
+        , %para33 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.8.output.layernorm.beta
+        , %para34 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.9.output.layernorm.gamma
+        , %para35 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.9.output.layernorm.beta
+        , %para36 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.10.output.layernorm.gamma
+        , %para37 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.10.output.layernorm.beta
+        , %para38 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.11.output.layernorm.gamma
+        , %para39 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.11.output.layernorm.beta
+        , %para40 : Ref[Tensor(F32)][512, 768]    # lamb_m.bert.bert.bert_embedding_postprocessor.full_position_embedding.embedding_table
+        , %para41 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.0.attention.output.layernorm.gamma
+        , %para42 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.0.attention.output.layernorm.beta
+        , %para43 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.1.attention.output.layernorm.gamma
+        , %para44 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.1.attention.output.layernorm.beta
+        , %para45 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.2.attention.output.layernorm.gamma
+        , %para46 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.2.attention.output.layernorm.beta
+        , %para47 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.3.attention.output.layernorm.gamma
+        , %para48 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.3.attention.output.layernorm.beta
+        , %para49 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.4.attention.output.layernorm.gamma
+        , %para50 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.4.attention.output.layernorm.beta
+        , %para51 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.5.attention.output.layernorm.gamma
+        , %para52 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.5.attention.output.layernorm.beta
+        , %para53 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.6.attention.output.layernorm.gamma
+        , %para54 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.6.attention.output.layernorm.beta
+        , %para55 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.7.attention.output.layernorm.gamma
+        , %para56 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.7.attention.output.layernorm.beta
+        , %para57 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.8.attention.output.layernorm.gamma
+        , %para58 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.8.attention.output.layernorm.beta
+        , %para59 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.9.attention.output.layernorm.gamma
+        , %para60 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.9.attention.output.layernorm.beta
+        , %para61 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.10.attention.output.layernorm.gamma
+        , %para62 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.10.attention.output.layernorm.beta
+        , %para63 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.11.attention.output.layernorm.gamma
+        , %para64 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.11.attention.output.layernorm.beta
+        , %para65 : Ref[Tensor(F32)][3072]    # lamb_m.bert.bert.bert_encoder.layers.0.intermediate.bias
+        , %para66 : Ref[Tensor(F32)][3072, 768]    # lamb_m.bert.bert.bert_encoder.layers.0.intermediate.weight
+        , %para67 : Ref[Tensor(F32)][3072]    # lamb_m.bert.bert.bert_encoder.layers.1.intermediate.bias
+        , %para68 : Ref[Tensor(F32)][3072, 768]    # lamb_m.bert.bert.bert_encoder.layers.1.intermediate.weight
+        , %para69 : Ref[Tensor(F32)][3072]    # lamb_m.bert.bert.bert_encoder.layers.2.intermediate.bias
+        , %para70 : Ref[Tensor(F32)][3072, 768]    # lamb_m.bert.bert.bert_encoder.layers.2.intermediate.weight
+        , %para71 : Ref[Tensor(F32)][3072]    # lamb_m.bert.bert.bert_encoder.layers.3.intermediate.bias
+        , %para72 : Ref[Tensor(F32)][3072, 768]    # lamb_m.bert.bert.bert_encoder.layers.3.intermediate.weight
+        , %para73 : Ref[Tensor(F32)][3072]    # lamb_m.bert.bert.bert_encoder.layers.4.intermediate.bias
+        , %para74 : Ref[Tensor(F32)][3072, 768]    # lamb_m.bert.bert.bert_encoder.layers.4.intermediate.weight
+        , %para75 : Ref[Tensor(F32)][3072]    # lamb_m.bert.bert.bert_encoder.layers.5.intermediate.bias
+        , %para76 : Ref[Tensor(F32)][3072, 768]    # lamb_m.bert.bert.bert_encoder.layers.5.intermediate.weight
+        , %para77 : Ref[Tensor(F32)][3072]    # lamb_m.bert.bert.bert_encoder.layers.6.intermediate.bias
+        , %para78 : Ref[Tensor(F32)][3072, 768]    # lamb_m.bert.bert.bert_encoder.layers.6.intermediate.weight
+        , %para79 : Ref[Tensor(F32)][3072]    # lamb_m.bert.bert.bert_encoder.layers.7.intermediate.bias
+        , %para80 : Ref[Tensor(F32)][3072, 768]    # lamb_m.bert.bert.bert_encoder.layers.7.intermediate.weight
+        , %para81 : Ref[Tensor(F32)][3072]    # lamb_m.bert.bert.bert_encoder.layers.8.intermediate.bias
+        , %para82 : Ref[Tensor(F32)][3072, 768]    # lamb_m.bert.bert.bert_encoder.layers.8.intermediate.weight
+        , %para83 : Ref[Tensor(F32)][3072]    # lamb_m.bert.bert.bert_encoder.layers.9.intermediate.bias
+        , %para84 : Ref[Tensor(F32)][3072, 768]    # lamb_m.bert.bert.bert_encoder.layers.9.intermediate.weight
+        , %para85 : Ref[Tensor(F32)][3072]    # lamb_m.bert.bert.bert_encoder.layers.10.intermediate.bias
+        , %para86 : Ref[Tensor(F32)][3072, 768]    # lamb_m.bert.bert.bert_encoder.layers.10.intermediate.weight
+        , %para87 : Ref[Tensor(F32)][3072]    # lamb_m.bert.bert.bert_encoder.layers.11.intermediate.bias
+        , %para88 : Ref[Tensor(F32)][3072, 768]    # lamb_m.bert.bert.bert_encoder.layers.11.intermediate.weight
+        , %para89 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.0.output.dense.bias
+        , %para90 : Ref[Tensor(F32)][768, 3072]    # lamb_m.bert.bert.bert_encoder.layers.0.output.dense.weight
+        , %para91 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.1.output.dense.bias
+        , %para92 : Ref[Tensor(F32)][768, 3072]    # lamb_m.bert.bert.bert_encoder.layers.1.output.dense.weight
+        , %para93 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.2.output.dense.bias
+        , %para94 : Ref[Tensor(F32)][768, 3072]    # lamb_m.bert.bert.bert_encoder.layers.2.output.dense.weight
+        , %para95 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.3.output.dense.bias
+        , %para96 : Ref[Tensor(F32)][768, 3072]    # lamb_m.bert.bert.bert_encoder.layers.3.output.dense.weight
+        , %para97 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.4.output.dense.bias
+        , %para98 : Ref[Tensor(F32)][768, 3072]    # lamb_m.bert.bert.bert_encoder.layers.4.output.dense.weight
+        , %para99 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.5.output.dense.bias
+        , %para100 : Ref[Tensor(F32)][768, 3072]    # lamb_m.bert.bert.bert_encoder.layers.5.output.dense.weight
+        , %para101 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.6.output.dense.bias
+        , %para102 : Ref[Tensor(F32)][768, 3072]    # lamb_m.bert.bert.bert_encoder.layers.6.output.dense.weight
+        , %para103 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.7.output.dense.bias
+        , %para104 : Ref[Tensor(F32)][768, 3072]    # lamb_m.bert.bert.bert_encoder.layers.7.output.dense.weight
+        , %para105 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.8.output.dense.bias
+        , %para106 : Ref[Tensor(F32)][768, 3072]    # lamb_m.bert.bert.bert_encoder.layers.8.output.dense.weight
+        , %para107 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.9.output.dense.bias
+        , %para108 : Ref[Tensor(F32)][768, 3072]    # lamb_m.bert.bert.bert_encoder.layers.9.output.dense.weight
+        , %para109 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.10.output.dense.bias
+        , %para110 : Ref[Tensor(F32)][768, 3072]    # lamb_m.bert.bert.bert_encoder.layers.10.output.dense.weight
+        , %para111 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.11.output.dense.bias
+        , %para112 : Ref[Tensor(F32)][768, 3072]    # lamb_m.bert.bert.bert_encoder.layers.11.output.dense.weight
+        , %para113 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.0.attention.output.dense.bias
+        , %para114 : Ref[Tensor(F32)][768, 768]    # lamb_m.bert.bert.bert_encoder.layers.0.attention.output.dense.weight
+        , %para115 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.1.attention.output.dense.bias
+        , %para116 : Ref[Tensor(F32)][768, 768]    # lamb_m.bert.bert.bert_encoder.layers.1.attention.output.dense.weight
+        , %para117 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.2.attention.output.dense.bias
+        , %para118 : Ref[Tensor(F32)][768, 768]    # lamb_m.bert.bert.bert_encoder.layers.2.attention.output.dense.weight
+        , %para119 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.3.attention.output.dense.bias
+        , %para120 : Ref[Tensor(F32)][768, 768]    # lamb_m.bert.bert.bert_encoder.layers.3.attention.output.dense.weight
+        , %para121 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.4.attention.output.dense.bias
+        , %para122 : Ref[Tensor(F32)][768, 768]    # lamb_m.bert.bert.bert_encoder.layers.4.attention.output.dense.weight
+        , %para123 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.5.attention.output.dense.bias
+        , %para124 : Ref[Tensor(F32)][768, 768]    # lamb_m.bert.bert.bert_encoder.layers.5.attention.output.dense.weight
+        , %para125 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.6.attention.output.dense.bias
+        , %para126 : Ref[Tensor(F32)][768, 768]    # lamb_m.bert.bert.bert_encoder.layers.6.attention.output.dense.weight
+        , %para127 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.7.attention.output.dense.bias
+        , %para128 : Ref[Tensor(F32)][768, 768]    # lamb_m.bert.bert.bert_encoder.layers.7.attention.output.dense.weight
+        , %para129 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.8.attention.output.dense.bias
+        , %para130 : Ref[Tensor(F32)][768, 768]    # lamb_m.bert.bert.bert_encoder.layers.8.attention.output.dense.weight
+        , %para131 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.9.attention.output.dense.bias
+        , %para132 : Ref[Tensor(F32)][768, 768]    # lamb_m.bert.bert.bert_encoder.layers.9.attention.output.dense.weight
+        , %para133 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.10.attention.output.dense.bias
+        , %para134 : Ref[Tensor(F32)][768, 768]    # lamb_m.bert.bert.bert_encoder.layers.10.attention.output.dense.weight
+        , %para135 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.11.attention.output.dense.bias
+        , %para136 : Ref[Tensor(F32)][768, 768]    # lamb_m.bert.bert.bert_encoder.layers.11.attention.output.dense.weight
+        , %para137 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.0.attention.attention.query_layer.bias
+        , %para138 : Ref[Tensor(F32)][768, 768]    # lamb_m.bert.bert.bert_encoder.layers.0.attention.attention.query_layer.weight
+        , %para139 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.0.attention.attention.key_layer.bias
+        , %para140 : Ref[Tensor(F32)][768, 768]    # lamb_m.bert.bert.bert_encoder.layers.0.attention.attention.key_layer.weight
+        , %para141 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.1.attention.attention.query_layer.bias
+        , %para142 : Ref[Tensor(F32)][768, 768]    # lamb_m.bert.bert.bert_encoder.layers.1.attention.attention.query_layer.weight
+        , %para143 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.1.attention.attention.key_layer.bias
+        , %para144 : Ref[Tensor(F32)][768, 768]    # lamb_m.bert.bert.bert_encoder.layers.1.attention.attention.key_layer.weight
+        , %para145 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.2.attention.attention.query_layer.bias
+        , %para146 : Ref[Tensor(F32)][768, 768]    # lamb_m.bert.bert.bert_encoder.layers.2.attention.attention.query_layer.weight
+        , %para147 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.2.attention.attention.key_layer.bias
+        , %para148 : Ref[Tensor(F32)][768, 768]    # lamb_m.bert.bert.bert_encoder.layers.2.attention.attention.key_layer.weight
+        , %para149 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.3.attention.attention.query_layer.bias
+        , %para150 : Ref[Tensor(F32)][768, 768]    # lamb_m.bert.bert.bert_encoder.layers.3.attention.attention.query_layer.weight
+        , %para151 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.3.attention.attention.key_layer.bias
+        , %para152 : Ref[Tensor(F32)][768, 768]    # lamb_m.bert.bert.bert_encoder.layers.3.attention.attention.key_layer.weight
+        , %para153 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.4.attention.attention.query_layer.bias
+        , %para154 : Ref[Tensor(F32)][768, 768]    # lamb_m.bert.bert.bert_encoder.layers.4.attention.attention.query_layer.weight
+        , %para155 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.4.attention.attention.key_layer.bias
+        , %para156 : Ref[Tensor(F32)][768, 768]    # lamb_m.bert.bert.bert_encoder.layers.4.attention.attention.key_layer.weight
+        , %para157 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.5.attention.attention.query_layer.bias
+        , %para158 : Ref[Tensor(F32)][768, 768]    # lamb_m.bert.bert.bert_encoder.layers.5.attention.attention.query_layer.weight
+        , %para159 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.5.attention.attention.key_layer.bias
+        , %para160 : Ref[Tensor(F32)][768, 768]    # lamb_m.bert.bert.bert_encoder.layers.5.attention.attention.key_layer.weight
+        , %para161 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.6.attention.attention.query_layer.bias
+        , %para162 : Ref[Tensor(F32)][768, 768]    # lamb_m.bert.bert.bert_encoder.layers.6.attention.attention.query_layer.weight
+        , %para163 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.6.attention.attention.key_layer.bias
+        , %para164 : Ref[Tensor(F32)][768, 768]    # lamb_m.bert.bert.bert_encoder.layers.6.attention.attention.key_layer.weight
+        , %para165 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.7.attention.attention.query_layer.bias
+        , %para166 : Ref[Tensor(F32)][768, 768]    # lamb_m.bert.bert.bert_encoder.layers.7.attention.attention.query_layer.weight
+        , %para167 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.7.attention.attention.key_layer.bias
+        , %para168 : Ref[Tensor(F32)][768, 768]    # lamb_m.bert.bert.bert_encoder.layers.7.attention.attention.key_layer.weight
+        , %para169 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.8.attention.attention.query_layer.bias
+        , %para170 : Ref[Tensor(F32)][768, 768]    # lamb_m.bert.bert.bert_encoder.layers.8.attention.attention.query_layer.weight
+        , %para171 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.8.attention.attention.key_layer.bias
+        , %para172 : Ref[Tensor(F32)][768, 768]    # lamb_m.bert.bert.bert_encoder.layers.8.attention.attention.key_layer.weight
+        , %para173 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.9.attention.attention.query_layer.bias
+        , %para174 : Ref[Tensor(F32)][768, 768]    # lamb_m.bert.bert.bert_encoder.layers.9.attention.attention.query_layer.weight
+        , %para175 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.9.attention.attention.key_layer.bias
+        , %para176 : Ref[Tensor(F32)][768, 768]    # lamb_m.bert.bert.bert_encoder.layers.9.attention.attention.key_layer.weight
+        , %para177 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.10.attention.attention.query_layer.bias
+        , %para178 : Ref[Tensor(F32)][768, 768]    # lamb_m.bert.bert.bert_encoder.layers.10.attention.attention.query_layer.weight
+        , %para179 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.10.attention.attention.key_layer.bias
+        , %para180 : Ref[Tensor(F32)][768, 768]    # lamb_m.bert.bert.bert_encoder.layers.10.attention.attention.key_layer.weight
+        , %para181 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.11.attention.attention.query_layer.bias
+        , %para182 : Ref[Tensor(F32)][768, 768]    # lamb_m.bert.bert.bert_encoder.layers.11.attention.attention.query_layer.weight
+        , %para183 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.11.attention.attention.key_layer.bias
+        , %para184 : Ref[Tensor(F32)][768, 768]    # lamb_m.bert.bert.bert_encoder.layers.11.attention.attention.key_layer.weight
+        , %para185 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.0.attention.attention.value_layer.bias
+        , %para186 : Ref[Tensor(F32)][768, 768]    # lamb_m.bert.bert.bert_encoder.layers.0.attention.attention.value_layer.weight
+        , %para187 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.1.attention.attention.value_layer.bias
+        , %para188 : Ref[Tensor(F32)][768, 768]    # lamb_m.bert.bert.bert_encoder.layers.1.attention.attention.value_layer.weight
+        , %para189 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.2.attention.attention.value_layer.bias
+        , %para190 : Ref[Tensor(F32)][768, 768]    # lamb_m.bert.bert.bert_encoder.layers.2.attention.attention.value_layer.weight
+        , %para191 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.3.attention.attention.value_layer.bias
+        , %para192 : Ref[Tensor(F32)][768, 768]    # lamb_m.bert.bert.bert_encoder.layers.3.attention.attention.value_layer.weight
+        , %para193 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.4.attention.attention.value_layer.bias
+        , %para194 : Ref[Tensor(F32)][768, 768]    # lamb_m.bert.bert.bert_encoder.layers.4.attention.attention.value_layer.weight
+        , %para195 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.5.attention.attention.value_layer.bias
+        , %para196 : Ref[Tensor(F32)][768, 768]    # lamb_m.bert.bert.bert_encoder.layers.5.attention.attention.value_layer.weight
+        , %para197 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.6.attention.attention.value_layer.bias
+        , %para198 : Ref[Tensor(F32)][768, 768]    # lamb_m.bert.bert.bert_encoder.layers.6.attention.attention.value_layer.weight
+        , %para199 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.7.attention.attention.value_layer.bias
+        , %para200 : Ref[Tensor(F32)][768, 768]    # lamb_m.bert.bert.bert_encoder.layers.7.attention.attention.value_layer.weight
+        , %para201 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.8.attention.attention.value_layer.bias
+        , %para202 : Ref[Tensor(F32)][768, 768]    # lamb_m.bert.bert.bert_encoder.layers.8.attention.attention.value_layer.weight
+        , %para203 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.9.attention.attention.value_layer.bias
+        , %para204 : Ref[Tensor(F32)][768, 768]    # lamb_m.bert.bert.bert_encoder.layers.9.attention.attention.value_layer.weight
+        , %para205 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.10.attention.attention.value_layer.bias
+        , %para206 : Ref[Tensor(F32)][768, 768]    # lamb_m.bert.bert.bert_encoder.layers.10.attention.attention.value_layer.weight
+        , %para207 : Ref[Tensor(F32)][768]    # lamb_m.bert.bert.bert_encoder.layers.11.attention.attention.value_layer.bias
+        , %para208 : Ref[Tensor(F32)][768, 768]    # lamb_m.bert.bert.bert_encoder.layers.11.attention.attention.value_layer.weight
+    ) {
+
+#------------------------> 0
+    %1 = FuncGraph::fg_8507(%para1, %para2, %para3, %para4)    #(Tensor(I64)[1, 129], NoneType, NoneType, Tensor(I64)[1, 7])    # fg_8507=construct.8507 #scope: Default
+#[CNode]8508
+    Primitive::Return{prim_type=1}(%1)    #(Undefined) #scope: Default
+      # In file /mnt/sda1/xzstu/ly/SememeWSD-main/bert/src/bert_for_pre_training.py(283)/        return prediction_scores/#[CNode]8509
+}
+# order:
+#   1: construct_wrapper.8493:[CNode]8508{[0]: ValueNode<FuncGraph> construct.8507, [1]: input_ids, [2]: input_mask, [3]: token_type_id, [4]: masked_lm_positions}
+#   2: construct_wrapper.8493:[CNode]8509{[0]: ValueNode<Primitive> Return, [1]: [CNode]8508}
+
+
+# [No.2] construct.8494
+# In file /mnt/sda1/xzstu/ly/SememeWSD-main/bert/src/bert_for_pre_training.py(272)/    def construct(self,/
+funcgraph fg_8494[fg_8493](
+        %para209 : Tensor(I64)[1, 129]    # input_ids
+        , %para210 : NoneType    # input_mask
+        , %para211 : NoneType    # token_type_id
+        , %para212 : Tensor(I64)[1, 7]    # masked_lm_positions
+    ) {
+    %1 : Tuple[Tensor(I64)] = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}(%para209)    #(Tensor(I64)[1, 129]) #scope: Default
+      # In file /mnt/sda1/xzstu/ly/SememeWSD-main/bert/src/bert_for_pre_training.py(281)/            self.lamb_m(input_ids,masked_lm_positions=masked_lm_positions)/#[CNode]8510
+    %2 : Tuple[String] = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}("masked_lm_positions")    #(String) #scope: Default
+      # In file /mnt/sda1/xzstu/ly/SememeWSD-main/bert/src/bert_for_pre_training.py(281)/            self.lamb_m(input_ids,masked_lm_positions=masked_lm_positions)/#[CNode]8511
+    %3 : Tuple[Tensor(I64)] = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}(%para212)    #(Tensor(I64)[1, 7]) #scope: Default
+      # In file /mnt/sda1/xzstu/ly/SememeWSD-main/bert/src/bert_for_pre_training.py(281)/            self.lamb_m(input_ids,masked_lm_positions=masked_lm_positions)/#[CNode]8512
+    %4 : Dictionary[[masked_lm_positions,],[Tensor[Int64]]] = DoSignaturePrimitive::S-Prim-make_dict{prim_type=1}(%2, %3)    #(Tuple[String], Tuple[Tensor(I64)]) #scope: Default
+      # In file /mnt/sda1/xzstu/ly/SememeWSD-main/bert/src/bert_for_pre_training.py(281)/            self.lamb_m(input_ids,masked_lm_positions=masked_lm_positions)/#[CNode]8513
+
+#------------------------> 1
+    %5 = UnpackCall::unpack_call(FuncGraph::fg_8514, %1, %4)    #(Func, Tuple[Tensor(I64)], Dictionary[[masked_lm_positions,],[Tensor[Int64]]])    # fg_8514=construct.8514 #scope: Default
+      # In file /mnt/sda1/xzstu/ly/SememeWSD-main/bert/src/bert_for_pre_training.py(281)/            self.lamb_m(input_ids,masked_lm_positions=masked_lm_positions)/#prediction_scores
+    Primitive::Return{prim_type=1}(%5)    #(Undefined) #scope: Default
+      # In file /mnt/sda1/xzstu/ly/SememeWSD-main/bert/src/bert_for_pre_training.py(283)/        return prediction_scores/#[CNode]8515
+}
+# order:
+#   1: construct.8494:[CNode]8510{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: input_ids}
+#   2: construct.8494:[CNode]8511{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: ValueNode<StringImm> masked_lm_positions}
+#   3: construct.8494:[CNode]8512{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: masked_lm_positions}
+#   4: construct.8494:[CNode]8513{[0]: ValueNode<DoSignaturePrimitive> S-Prim-make_dict, [1]: [CNode]8511, [2]: [CNode]8512}
+#   5: construct.8494:prediction_scores{[0]: ValueNode<UnpackCall> unpack_call.8516, [1]: ValueNode<FuncGraph> construct.8514, [2]: [CNode]8510, [3]: [CNode]8513}
+#   6: construct.8494:[CNode]8515{[0]: ValueNode<Primitive> Return, [1]: prediction_scores}
+
+
+# [No.3] UnpackCall.8495
+
+funcgraph fg_8495(
+        %para213 : Func    # 8496
+        , %para214 : Tuple[Tensor(I64)]    # 8497
+        , %para215 : Dictionary[[masked_lm_positions,],[Tensor[Int64]]]    # 8498
+    ) {
+    %1 : Tensor(I64)[1, 129] = Primitive::TupleGetItem{prim_type=1}(%para214, I64(0))    #(Tuple[Tensor(I64)], I64) #scope: Default
+#8517
+    %2 : Tensor(I64)[1, 7] = Primitive::dict_getitem{prim_type=1}(%para215, "masked_lm_positions")    #(Dictionary[[masked_lm_positions,],[Tensor[Int64]]], String) #scope: Default
+#8518
+    %3 : Keyword[key : masked_lm_positionsvalue : Tensor[Int64]] = Primitive::make_keyword_arg{prim_type=1}("masked_lm_positions", %2)    #(String, Tensor(I64)[1, 7]) #scope: Default
+#8519
+
+#------------------------> 2
+    %4 = %para213(%1, %3)    #(Tensor(I64)[1, 129], Keyword[key : masked_lm_positionsvalue : Tensor[Int64]]) #scope: Default
+#8520
+    Primitive::Return{prim_type=1}(%4)    #(Undefined) #scope: Default
+#8521
+}
+# order:
+#   1: UnpackCall.8495:8520{[0]: 8496, [1]: 8517, [2]: 8519}
+#   2: UnpackCall.8495:8521{[0]: ValueNode<Primitive> Return, [1]: 8520}
+
+
+# [No.4] construct.8499
+# In file /mnt/sda1/xzstu/ly/SememeWSD-main/bert/src/bert_for_pre_training.py(252)/    def construct(self,/
+funcgraph fg_8499[fg_8493](
+        %para216 : Tensor(I64)[1, 129]    # Φinput_ids
+        , %para217 : Keyword[key : masked_lm_positionsvalue : Tensor[Int64]]    # Φmasked_lm_positions
+    ) {
+    %1 : Bool = DoSignaturePrimitive::S-Prim-equal{prim_type=1}(None, None)    #(NoneType, NoneType) #scope: Default/lamb_m-BertNetworkForMask
+      # In file /mnt/sda1/xzstu/ly/SememeWSD-main/bert/src/bert_for_pre_training.py(258)/        if input_mask==None:/#[CNode]8522
+    %2 : Bool = FuncGraph::fg_8523(%1)    #(Bool)    # fg_8523=bool_.8523 #scope: Default/lamb_m-BertNetworkForMask
+      # In file /mnt/sda1/xzstu/ly/SememeWSD-main/bert/src/bert_for_pre_training.py(258)/        if input_mask==None:/#[CNode]8524
+    %3 : Func = Primitive::Switch{prim_type=1}(%2, FuncGraph::fg_8525, FuncGraph::fg_8526)    #(Bool, Func, Func)    # fg_8525=✓construct.8525, fg_8526=✗construct.8526 #scope: Default/lamb_m-BertNetworkForMask
+      # In file /mnt/sda1/xzstu/ly/SememeWSD-main/bert/src/bert_for_pre_training.py(258)/        if input_mask==None:/#[CNode]8527
+    %4 : Tensor(I64)[1, 129] = %3() #scope: Default/lamb_m-BertNetworkForMask
+      # In file /mnt/sda1/xzstu/ly/SememeWSD-main/bert/src/bert_for_pre_training.py(258)/        if input_mask==None:/#[CNode]8528
+
+#------------------------> 3
+    %5 = FuncGraph::fg_8500(%4)    #(Tensor(I64)[1, 129])    # fg_8500=↓construct.8500 #scope: Default
+      # In file /mnt/sda1/xzstu/ly/SememeWSD-main/bert/src/bert_for_pre_training.py(281)/            self.lamb_m(input_ids,masked_lm_positions=masked_lm_positions)/#[CNode]8529
+    Primitive::Return{prim_type=1}(%5)    #(Undefined) #scope: Default/lamb_m-BertNetworkForMask
+      # In file /mnt/sda1/xzstu/ly/SememeWSD-main/bert/src/bert_for_pre_training.py(258)/        if input_mask==None:/#[CNode]8530
+}
+# order:
+#   1: construct.8499:[CNode]8522{[0]: ValueNode<DoSignaturePrimitive> S-Prim-equal, [1]: ValueNode<None> None, [2]: ValueNode<None> None}
+#   2: construct.8499:[CNode]8524{[0]: ValueNode<FuncGraph> bool_.8523, [1]: [CNode]8522}
+#   3: construct.8499:[CNode]8527{[0]: ValueNode<Primitive> Switch, [1]: [CNode]8524, [2]: ValueNode<FuncGraph> ✓construct.8525, [3]: ValueNode<FuncGraph> ✗construct.8526}
+#   4: construct.8499:[CNode]8528{[0]: [CNode]8527}
+#   5: construct.8499:[CNode]8529{[0]: ValueNode<FuncGraph> ↓construct.8500, [1]: [CNode]8528}
+#   6: construct.8499:[CNode]8530{[0]: ValueNode<Primitive> Return, [1]: [CNode]8529}
+
+
+# [No.5] ↓construct.8500
+# In file /mnt/sda1/xzstu/ly/SememeWSD-main/bert/src/bert_for_pre_training.py(258)/        if input_mask==None:/
+funcgraph fg_8500[fg_8499](
+        %para218 : Tensor(I64)[1, 129]    # Φinput_mask
+    ) {
+    %1 : Bool = DoSignaturePrimitive::S-Prim-equal{prim_type=1}(None, None)    #(NoneType, NoneType) #scope: Default/lamb_m-BertNetworkForMask
+      # In file /mnt/sda1/xzstu/ly/SememeWSD-main/bert/src/bert_for_pre_training.py(260)/        if token_type_id==None:/#[CNode]8531
+    %2 : Bool = FuncGraph::fg_8523(%1)    #(Bool)    # fg_8523=bool_.8523 #scope: Default/lamb_m-BertNetworkForMask
+      # In file /mnt/sda1/xzstu/ly/SememeWSD-main/bert/src/bert_for_pre_training.py(260)/        if token_type_id==None:/#[CNode]8532
+    %3 : Func = Primitive::Switch{prim_type=1}(%2, FuncGraph::fg_8533, FuncGraph::fg_8534)    #(Bool, Func, Func)    # fg_8533=✓↓construct.8533, fg_8534=✗↓construct.8534 #scope: Default/lamb_m-BertNetworkForMask
+      # In file /mnt/sda1/xzstu/ly/SememeWSD-main/bert/src/bert_for_pre_training.py(260)/        if token_type_id==None:/#[CNode]8535
+    %4 : Tensor(I64)[1, 129] = %3() #scope: Default/lamb_m-BertNetworkForMask
+      # In file /mnt/sda1/xzstu/ly/SememeWSD-main/bert/src/bert_for_pre_training.py(260)/        if token_type_id==None:/#[CNode]8536
+
+#------------------------> 4
+    %5 = FuncGraph::fg_8501(%4)    #(Tensor(I64)[1, 129])    # fg_8501=↓↓construct.8501 #scope: Default
+      # In file /mnt/sda1/xzstu/ly/SememeWSD-main/bert/src/bert_for_pre_training.py(281)/            self.lamb_m(input_ids,masked_lm_positions=masked_lm_positions)/#[CNode]8537
+    Primitive::Return{prim_type=1}(%5)    #(Undefined) #scope: Default/lamb_m-BertNetworkForMask
+      # In file /mnt/sda1/xzstu/ly/SememeWSD-main/bert/src/bert_for_pre_training.py(260)/        if token_type_id==None:/#[CNode]8538
+}
+# order:
+#   1: ↓construct.8500:[CNode]8531{[0]: ValueNode<DoSignaturePrimitive> S-Prim-equal, [1]: ValueNode<None> None, [2]: ValueNode<None> None}
+#   2: ↓construct.8500:[CNode]8532{[0]: ValueNode<FuncGraph> bool_.8523, [1]: [CNode]8531}
+#   3: ↓construct.8500:[CNode]8535{[0]: ValueNode<Primitive> Switch, [1]: [CNode]8532, [2]: ValueNode<FuncGraph> ✓↓construct.8533, [3]: ValueNode<FuncGraph> ✗↓construct.8534}
+#   4: ↓construct.8500:[CNode]8536{[0]: [CNode]8535}
+#   5: ↓construct.8500:[CNode]8537{[0]: ValueNode<FuncGraph> ↓↓construct.8501, [1]: [CNode]8536}
+#   6: ↓construct.8500:[CNode]8538{[0]: ValueNode<Primitive> Return, [1]: [CNode]8537}
+
+
+# [No.6] ↓↓construct.8501
+# In file /mnt/sda1/xzstu/ly/SememeWSD-main/bert/src/bert_for_pre_training.py(260)/        if token_type_id==None:/
+funcgraph fg_8501[fg_8500](
+        %para219 : Tensor(I64)[1, 129]    # Φtoken_type_id
+    ) {
+    %1 : $(construct.8499):Tensor(I64)[1, 7] = Primitive::extract_keyword_arg{prim_type=1}("masked_lm_positions", %para217)    #(String, Keyword[key : masked_lm_positionsvalue : Tensor[Int64]]) #scope: Default
+#[CNode]8539
+
+#------------------------> 5
+    %2 = FuncGraph::fg_8502(%para216, %para218, %para219, %1)    #(Tensor(I64)[1, 129], Tensor(I64)[1, 129], Tensor(I64)[1, 129], Tensor(I64)[1, 7])    # fg_8502=construct.8502 #scope: Default/lamb_m-BertNetworkForMask
+      # In file /mnt/sda1/xzstu/ly/SememeWSD-main/bert/src/bert_for_pre_training.py(264)/            self.bert(input_ids, input_mask, token_type_id, masked_lm_positions)/#prediction_scores
+    Primitive::Return{prim_type=1}(%2)    #(Undefined) #scope: Default/lamb_m-BertNetworkForMask
+      # In file /mnt/sda1/xzstu/ly/SememeWSD-main/bert/src/bert_for_pre_training.py(266)/        return prediction_scores/#[CNode]8540
+}
+# order:
+#   1: ↓↓construct.8501:prediction_scores{[0]: ValueNode<FuncGraph> construct.8502, [1]: Φinput_ids, [2]: Φinput_mask, [3]: Φtoken_type_id, [4]: [CNode]8539}
+#   2: ↓↓construct.8501:[CNode]8540{[0]: ValueNode<Primitive> Return, [1]: prediction_scores}
+
+
+# [No.7] construct.8502
+# In file /mnt/sda1/xzstu/ly/SememeWSD-main/bert/src/bert_for_pre_training.py(236)/    def construct(self, input_ids, input_mask, token_type_id,/
+funcgraph fg_8502[fg_8493](
+        %para220 : Tensor(I64)[1, 129]    # input_ids
+        , %para221 : Tensor(I64)[1, 129]    # input_mask
+        , %para222 : Tensor(I64)[1, 129]    # token_type_id
+        , %para223 : Tensor(I64)[1, 7]    # masked_lm_positions
+    ) {
+
+#------------------------> 6
+    %1 = FuncGraph::fg_8503(%para220, %para222, %para221)    #(Tensor(I64)[1, 129], Tensor(I64)[1, 129], Tensor(I64)[1, 129])    # fg_8503=construct.8503 #scope: Default/lamb_m-BertNetworkForMask/bert-BertMask
+      # In file /mnt/sda1/xzstu/ly/SememeWSD-main/bert/src/bert_for_pre_training.py(239)/            self.bert(input_ids, token_type_id, input_mask)/#[CNode]8541
+    %2 = DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%1, I64(1))    #(Undefined, Undefined) #scope: Default/lamb_m-BertNetworkForMask/bert-BertMask
+      # In file /mnt/sda1/xzstu/ly/SememeWSD-main/bert/src/bert_for_pre_training.py(238)/        sequence_output, pooled_output, embedding_table = \/#pooled_output
+    %3 = Primitive::stop_gradient{prim_type=1}(%2)    #(Undefined) #scope: Default/lamb_m-BertNetworkForMask/bert-BertMask
+      # In file /mnt/sda1/xzstu/ly/SememeWSD-main/bert/src/bert_for_pre_training.py(264)/            self.bert(input_ids, input_mask, token_type_id, masked_lm_positions)/#[CNode]8542
+    %4 = DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%1, I64(0))    #(Undefined, Undefined) #scope: Default/lamb_m-BertNetworkForMask/bert-BertMask
+      # In file /mnt/sda1/xzstu/ly/SememeWSD-main/bert/src/bert_for_pre_training.py(238)/        sequence_output, pooled_output, embedding_table = \/#sequence_output
+    %5 = DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%1, I64(2))    #(Undefined, Undefined) #scope: Default/lamb_m-BertNetworkForMask/bert-BertMask
+      # In file /mnt/sda1/xzstu/ly/SememeWSD-main/bert/src/bert_for_pre_training.py(238)/        sequence_output, pooled_output, embedding_table = \/#embedding_table
+    %6 = FuncGraph::fg_8543(%4, %5, %para223)    #(Undefined, Undefined, Tensor(I64)[1, 7])    # fg_8543=construct.8543 #scope: Default/lamb_m-BertNetworkForMask/bert-BertMask
+      # In file /mnt/sda1/xzstu/ly/SememeWSD-main/bert/src/bert_for_pre_training.py(240)/        prediction_scores = self.cls1(sequence_output,/#prediction_scores
+    %7 = Primitive::Depend{prim_type=1}[side_effect_propagate=I64(1)](%6, %3)    #(Undefined, Undefined) #scope: Default/lamb_m-BertNetworkForMask/bert-BertMask
+      # In file /mnt/sda1/xzstu/ly/SememeWSD-main/bert/src/bert_for_pre_training.py(264)/            self.bert(input_ids, input_mask, token_type_id, masked_lm_positions)/#[CNode]8544
+    Primitive::Return{prim_type=1}(%7)    #(Undefined) #scope: Default/lamb_m-BertNetworkForMask/bert-BertMask
+      # In file /mnt/sda1/xzstu/ly/SememeWSD-main/bert/src/bert_for_pre_training.py(243)/        return prediction_scores/#[CNode]8545
+}
+# order:
+#   1: construct.8502:[CNode]8541{[0]: ValueNode<FuncGraph> construct.8503, [1]: input_ids, [2]: token_type_id, [3]: input_mask}
+#   2: construct.8502:sequence_output{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: [CNode]8541, [2]: ValueNode<Int64Imm> 0}
+#   3: construct.8502:pooled_output{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: [CNode]8541, [2]: ValueNode<Int64Imm> 1}
+#   4: construct.8502:embedding_table{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: [CNode]8541, [2]: ValueNode<Int64Imm> 2}
+#   5: construct.8502:prediction_scores{[0]: ValueNode<FuncGraph> construct.8543, [1]: sequence_output, [2]: embedding_table, [3]: masked_lm_positions}
+#   6: construct.8502:[CNode]8545{[0]: ValueNode<Primitive> Return, [1]: [CNode]8544}
+
+
+# [No.8] construct.8503
+# In file /mnt/sda1/xzstu/ly/SememeWSD-main/bert/src/bert_model.py(819)/    def construct(self, input_ids, token_type_ids, input_mask):/
+funcgraph fg_8503[fg_8493](
+        %para224 : Tensor(I64)[1, 129]    # input_ids
+        , %para225 : Tensor(I64)[1, 129]    # token_type_ids
+        , %para226 : Tensor(I64)[1, 129]    # input_mask
+    ) {
+    %1 : Tensor(F32)[1, 129, 768] = FuncGraph::fg_8546(%para224)    #(Tensor(I64)[1, 129])    # fg_8546=construct.8546 #scope: Default/lamb_m-BertNetworkForMask/bert-BertMask/bert-BertModel
+      # In file /mnt/sda1/xzstu/ly/SememeWSD-main/bert/src/bert_model.py(823)/        word_embeddings = self.bert_embedding_lookup(input_ids)/#word_embeddings
+
+#------------------------> 7
+    %2 = FuncGraph::fg_8504(%para225, %1)    #(Tensor(I64)[1, 129], Tensor(F32)[1, 129, 768])    # fg_8504=construct.8504 #scope: Default/lamb_m-BertNetworkForMask/bert-BertMask/bert-BertModel
+      # In file /mnt/sda1/xzstu/ly/SememeWSD-main/bert/src/bert_model.py(824)/        embedding_output = self.bert_embedding_postprocessor(token_type_ids,/#embedding_output
+    %3 = FuncGraph::fg_8547(%2)    #(Undefined)    # fg_8547=construct.8547 #scope: Default/lamb_m-BertNetworkForMask/bert-BertMask/bert-BertModel
+      # In file /mnt/sda1/xzstu/ly/SememeWSD-main/bert/src/bert_model.py(831)/        encoder_output = self.bert_encoder(self.cast_compute_type(embedding_output),/#[CNode]8548
+    %4 = FuncGraph::fg_8549(%para226)    #(Tensor(I64)[1, 129])    # fg_8549=construct.8549 #scope: Default/lamb_m-BertNetworkForMask/bert-BertMask/bert-BertModel
+      # In file /mnt/sda1/xzstu/ly/SememeWSD-main/bert/src/bert_model.py(828)/        attention_mask = self._create_attention_mask_from_input_mask(input_mask)/#attention_mask
+    %5 = FuncGraph::fg_8550(%3, %4)    #(Undefined, Undefined)    # fg_8550=construct.8550 #scope: Default/lamb_m-BertNetworkForMask/bert-BertMask/bert-BertModel
+      # In file /mnt/sda1/xzstu/ly/SememeWSD-main/bert/src/bert_model.py(831)/        encoder_output = self.bert_encoder(self.cast_compute_type(embedding_output),/#encoder_output
+    %6 = DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%5, I64(11))    #(Undefined, Undefined) #scope: Default/lamb_m-BertNetworkForMask/bert-BertMask/bert-BertModel
+      # In file /mnt/sda1/xzstu/ly/SememeWSD-main/bert/src/bert_model.py(834)/        sequence_output = self.cast(encoder_output[self.last_idx], self.dtype)/#[CNode]8551
+    %7 = DoSignaturePrimitive::S-Prim-Cast{prim_type=1}[output_names=["output"], input_names=["x", "dst_type"], SrcT=F16, DstT=F32, dst_type=F32](%6, F32)    #(Undefined, Undefined) #scope: Default/lamb_m-BertNetworkForMask/bert-BertMask/bert-BertModel
+      # In file /mnt/sda1/xzstu/ly/SememeWSD-main/bert/src/bert_model.py(834)/        sequence_output = self.cast(encoder_output[self.last_idx], self.dtype)/#sequence_output
+    %8 = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}(I64(0), I64(0), I64(0))    #(Undefined, Undefined, Undefined) #scope: Default/lamb_m-BertNetworkForMask/bert-BertMask/bert-BertModel
+      # In file /mnt/sda1/xzstu/ly/SememeWSD-main/bert/src/bert_model.py(839)/                                    (0, 0, 0),/#[CNode]8552
+    %9 = ClassType() #scope: Default/lamb_m-BertNetworkForMask/bert-BertMask/bert-BertModel
+      # In file /mnt/sda1/xzstu/ly/SememeWSD-main/bert/src/bert_model.py(837)/        batch_size = P.Shape()(input_ids)[0]/#[CNode]8553
+    %10 = %9(%para224)    #(Tensor(I64)[1, 129]) #scope: Default/lamb_m-BertNetworkForMask/bert-BertMask/bert-BertModel
+      # In file /mnt/sda1/xzstu/ly/SememeWSD-main/bert/src/bert_model.py(837)/        batch_size = P.Shape()(input_ids)[0]/#[CNode]8554
+    %11 = DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%10, I64(0))    #(Undefined, Undefined) #scope: Default/lamb_m-BertNetworkForMask/bert-BertMask/bert-BertModel
+      # In file /mnt/sda1/xzstu/ly/SememeWSD-main/bert/src/bert_model.py(837)/        batch_size = P.Shape()(input_ids)[0]/#batch_size
+    %12 = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}(%11, I64(1), I64(768))    #(Undefined, Undefined, Undefined) #scope: Default/lamb_m-BertNetworkForMask/bert-BertMask/bert-BertModel
+      # In file /mnt/sda1/xzstu/ly/SememeWSD-main/bert/src/bert_model.py(840)/                                    (batch_size, 1, self.hidden_size),/#[CNode]8555
+    %13 = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}(I64(1), I64(1), I64(1))    #(Undefined, Undefined, Undefined) #scope: Default/lamb_m-BertNetworkForMask/bert-BertMask/bert-BertModel
+      # In file /mnt/sda1/xzstu/ly/SememeWSD-main/bert/src/bert_model.py(841)/                                    (1, 1, 1))/#[CNode]8556
+    %14 = DoSignaturePrimitive::S-Prim-StridedSlice{prim_type=1}[new_axis_mask=I64(0), shrink_axis_mask=I64(0), end_mask=I64(0), input_names=["x", "begin", "end", "strides"], output_names=["output"], begin_mask=I64(0), ellipsis_mask=I64(0)](%7, %8, %12, %13)    #(Undefined, Undefined, Undefined, Undefined) #scope: Default/lamb_m-BertNetworkForMask/bert-BertMask/bert-BertModel
+      # In file /mnt/sda1/xzstu/ly/SememeWSD-main/bert/src/bert_model.py(838)/        sequence_slice = self.slice(sequence_output,/#sequence_slice
+    %15 = DoSignaturePrimitive::S-Prim-Squeeze{prim_type=1}[output_names=["output"], input_names=["x"], axis=(I64(1))](%14)    #(Undefined) #scope: Default/lamb_m-BertNetworkForMask/bert-BertMask/bert-BertModel
+      # In file /mnt/sda1/xzstu/ly/SememeWSD-main/bert/src/bert_model.py(842)/        first_token = self.squeeze_1(sequence_slice)/#first_token
+    %16 = FuncGraph::fg_8557(%15)    #(Undefined)    # fg_8557=construct.8557 #scope: Default/lamb_m-BertNetworkForMask/bert-BertMask/bert-BertModel
+      # In file /mnt/sda1/xzstu/ly/SememeWSD-main/bert/src/bert_model.py(843)/        pooled_output = self.dense(first_token)/#pooled_output
+    %17 = DoSignaturePrimitive::S-Prim-Cast{prim_type=1}[output_names=["output"], input_names=["x", "dst_type"], SrcT=F16, DstT=F32, dst_type=F32](%16, F32)    #(Undefined, Undefined) #scope: Default/lamb_m-BertNetworkForMask/bert-BertMask/bert-BertModel
+      # In file /mnt/sda1/xzstu/ly/SememeWSD-main/bert/src/bert_model.py(844)/        pooled_output = self.cast(pooled_output, self.dtype)/#pooled_output
+    %18 = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}(%7, %17, %para6)    #(Undefined, Undefined, Ref[Tensor(F32)][21128, 768]) #scope: Default/lamb_m-BertNetworkForMask/bert-BertMask/bert-BertModel
+      # In file /mnt/sda1/xzstu/ly/SememeWSD-main/bert/src/bert_model.py(846)/        return sequence_output, pooled_output, embedding_tables/#[CNode]8558
+    Primitive::Return{prim_type=1}(%18)    #(Undefined) #scope: Default/lamb_m-BertNetworkForMask/bert-BertMask/bert-BertModel
+      # In file /mnt/sda1/xzstu/ly/SememeWSD-main/bert/src/bert_model.py(846)/        return sequence_output, pooled_output, embedding_tables/#[CNode]8559
+}
+# order:
+#   1: construct.8503:word_embeddings{[0]: ValueNode<FuncGraph> construct.8546, [1]: input_ids}
+#   2: construct.8503:embedding_output{[0]: ValueNode<FuncGraph> construct.8504, [1]: token_type_ids, [2]: word_embeddings}
+#   3: construct.8503:attention_mask{[0]: ValueNode<FuncGraph> construct.8549, [1]: input_mask}
+#   4: construct.8503:[CNode]8548{[0]: ValueNode<FuncGraph> construct.8547, [1]: embedding_output}
+#   5: construct.8503:encoder_output{[0]: ValueNode<FuncGraph> construct.8550, [1]: [CNode]8548, [2]: attention_mask}
+#   6: construct.8503:[CNode]8551{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: encoder_output, [2]: ValueNode<Int64Imm> 11}
+#   7: construct.8503:sequence_output{[0]: ValueNode<DoSignaturePrimitive> S-Prim-Cast, [1]: [CNode]8551, [2]: ValueNode<Float> Float32}
+#   8: construct.8503:[CNode]8553{[0]: ValueNode<ClassType> class 'mindspore.ops.operations.array_ops.Shape'}
+#   9: construct.8503:[CNode]8554{[0]: [CNode]8553, [1]: input_ids}
+#  10: construct.8503:batch_size{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: [CNode]8554, [2]: ValueNode<Int64Imm> 0}
+#  11: construct.8503:[CNode]8552{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: ValueNode<Int64Imm> 0, [2]: ValueNode<Int64Imm> 0, [3]: ValueNode<Int64Imm> 0}
+#  12: construct.8503:[CNode]8555{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: batch_size, [2]: ValueNode<Int64Imm> 1, [3]: ValueNode<Int64Imm> 768}
+#  13: construct.8503:[CNode]8556{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: ValueNode<Int64Imm> 1, [2]: ValueNode<Int64Imm> 1, [3]: ValueNode<Int64Imm> 1}
+#  14: construct.8503:sequence_slice{[0]: ValueNode<DoSignaturePrimitive> S-Prim-StridedSlice, [1]: sequence_output, [2]: [CNode]8552, [3]: [CNode]8555, [4]: [CNode]8556}
+#  15: construct.8503:first_token{[0]: ValueNode<DoSignaturePrimitive> S-Prim-Squeeze, [1]: sequence_slice}
+#  16: construct.8503:pooled_output{[0]: ValueNode<FuncGraph> construct.8557, [1]: first_token}
+#  17: construct.8503:pooled_output{[0]: ValueNode<DoSignaturePrimitive> S-Prim-Cast, [1]: pooled_output, [2]: ValueNode<Float> Float32}
+#  18: construct.8503:[CNode]8558{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: sequence_output, [2]: pooled_output, [3]: lamb_m.bert.bert.bert_embedding_lookup.embedding_table}
+#  19: construct.8503:[CNode]8559{[0]: ValueNode<Primitive> Return, [1]: [CNode]8558}
+
+
+# [No.9] construct.8504
+# In file /mnt/sda1/xzstu/ly/SememeWSD-main/bert/src/bert_model.py(193)/    def construct(self, token_type_ids, word_embeddings):/
+funcgraph fg_8504[fg_8493](
+        %para227 : Tensor(I64)[1, 129]    # token_type_ids
+        , %para228 : Tensor(F32)[1, 129, 768]    # output
+    ) {
+    %1 : Bool = FuncGraph::fg_8523(Bool(1))    #(Bool)    # fg_8523=bool_.8523 #scope: Default/lamb_m-BertNetworkForMask/bert-BertMask/bert-BertModel/bert_embedding_postprocessor-EmbeddingPostprocessor
+      # In file /mnt/sda1/xzstu/ly/SememeWSD-main/bert/src/bert_model.py(196)/        if self.use_token_type:/#[CNode]8560
+    %2 : Func = Primitive::Switch{prim_type=1}(%1, FuncGraph::fg_8561, FuncGraph::fg_8562)    #(Bool, Func, Func)    # fg_8561=✓construct.8561, fg_8562=✗construct.8562 #scope: Default/lamb_m-BertNetworkForMask/bert-BertMask/bert-BertModel/bert_embedding_postprocessor-EmbeddingPostprocessor
+      # In file /mnt/sda1/xzstu/ly/SememeWSD-main/bert/src/bert_model.py(196)/        if self.use_token_type:/#[CNode]8563
+    %3 : Tensor(F32)[1, 129, 768] = %2() #scope: Default/lamb_m-BertNetworkForMask/bert-BertMask/bert-BertModel/bert_embedding_postprocessor-EmbeddingPostprocessor
+      # In file /mnt/sda1/xzstu/ly/SememeWSD-main/bert/src/bert_model.py(196)/        if self.use_token_type:/#[CNode]8564
+
+#------------------------> 8
+    %4 = FuncGraph::fg_8505(%3)    #(Tensor(F32)[1, 129, 768])    # fg_8505=↓construct.8505 #scope: Default/lamb_m-BertNetworkForMask/bert-BertMask/bert-BertModel
+      # In file /mnt/sda1/xzstu/ly/SememeWSD-main/bert/src/bert_model.py(824)/        embedding_output = self.bert_embedding_postprocessor(token_type_ids,/#[CNode]8565
+    Primitive::Return{prim_type=1}(%4)    #(Undefined) #scope: Default/lamb_m-BertNetworkForMask/bert-BertMask/bert-BertModel/bert_embedding_postprocessor-EmbeddingPostprocessor
+      # In file /mnt/sda1/xzstu/ly/SememeWSD-main/bert/src/bert_model.py(196)/        if self.use_token_type:/#[CNode]8566
+}
+# order:
+#   1: construct.8504:[CNode]8560{[0]: ValueNode<FuncGraph> bool_.8523, [1]: ValueNode<BoolImm> true}
+#   2: construct.8504:[CNode]8563{[0]: ValueNode<Primitive> Switch, [1]: [CNode]8560, [2]: ValueNode<FuncGraph> ✓construct.8561, [3]: ValueNode<FuncGraph> ✗construct.8562}
+#   3: construct.8504:[CNode]8564{[0]: [CNode]8563}
+#   4: construct.8504:[CNode]8565{[0]: ValueNode<FuncGraph> ↓construct.8505, [1]: [CNode]8564}
+#   5: construct.8504:[CNode]8566{[0]: ValueNode<Primitive> Return, [1]: [CNode]8565}
+
+
+# [No.10] ↓construct.8505
+# In file /mnt/sda1/xzstu/ly/SememeWSD-main/bert/src/bert_model.py(196)/        if self.use_token_type:/
+funcgraph fg_8505[fg_8493](
+        %para229 : Tensor(F32)[1, 129, 768]    # Φoutput
+    ) {
+    %1 : Bool = DoSignaturePrimitive::S-Prim-logical_not{prim_type=1}(Bool(0))    #(Bool) #scope: Default/lamb_m-BertNetworkForMask/bert-BertMask/bert-BertModel/bert_embedding_postprocessor-EmbeddingPostprocessor
+      # In file /mnt/sda1/xzstu/ly/SememeWSD-main/bert/src/bert_model.py(199)/        if not self.use_relative_positions:/#[CNode]8567
+    %2 : Bool = FuncGraph::fg_8523(%1)    #(Bool)    # fg_8523=bool_.8523 #scope: Default/lamb_m-BertNetworkForMask/bert-BertMask/bert-BertModel/bert_embedding_postprocessor-EmbeddingPostprocessor
+      # In file /mnt/sda1/xzstu/ly/SememeWSD-main/bert/src/bert_model.py(199)/        if not self.use_relative_positions:/#[CNode]8568
+    %3 : Func = Primitive::Switch{prim_type=1}(%2, FuncGraph::fg_8506, FuncGraph::fg_8569)    #(Bool, Func, Func)    # fg_8506=✓↓construct.8506, fg_8569=✗↓construct.8569 #scope: Default/lamb_m-BertNetworkForMask/bert-BertMask/bert-BertModel/bert_embedding_postprocessor-EmbeddingPostprocessor
+      # In file /mnt/sda1/xzstu/ly/SememeWSD-main/bert/src/bert_model.py(199)/        if not self.use_relative_positions:/#[CNode]8570
+
+#------------------------> 9
+    %4 = %3() #scope: Default/lamb_m-BertNetworkForMask/bert-BertMask/bert-BertModel/bert_embedding_postprocessor-EmbeddingPostprocessor
+      # In file /mnt/sda1/xzstu/ly/SememeWSD-main/bert/src/bert_model.py(199)/        if not self.use_relative_positions:/#[CNode]8571
+    %5 = FuncGraph::fg_8572(%4)    #(Undefined)    # fg_8572=↓↓construct.8572 #scope: Default/lamb_m-BertNetworkForMask/bert-BertMask/bert-BertModel
+      # In file /mnt/sda1/xzstu/ly/SememeWSD-main/bert/src/bert_model.py(824)/        embedding_output = self.bert_embedding_postprocessor(token_type_ids,/#[CNode]8573
+    Primitive::Return{prim_type=1}(%5)    #(Undefined) #scope: Default/lamb_m-BertNetworkForMask/bert-BertMask/bert-BertModel/bert_embedding_postprocessor-EmbeddingPostprocessor
+      # In file /mnt/sda1/xzstu/ly/SememeWSD-main/bert/src/bert_model.py(199)/        if not self.use_relative_positions:/#[CNode]8574
+}
+# order:
+#   1: ↓construct.8505:[CNode]8567{[0]: ValueNode<DoSignaturePrimitive> S-Prim-logical_not, [1]: ValueNode<BoolImm> false}
+#   2: ↓construct.8505:[CNode]8568{[0]: ValueNode<FuncGraph> bool_.8523, [1]: [CNode]8567}
+#   3: ↓construct.8505:[CNode]8570{[0]: ValueNode<Primitive> Switch, [1]: [CNode]8568, [2]: ValueNode<FuncGraph> ✓↓construct.8506, [3]: ValueNode<FuncGraph> ✗↓construct.8569}
+#   4: ↓construct.8505:[CNode]8571{[0]: [CNode]8570}
+#   5: ↓construct.8505:[CNode]8573{[0]: ValueNode<FuncGraph> ↓↓construct.8572, [1]: [CNode]8571}
+#   6: ↓construct.8505:[CNode]8574{[0]: ValueNode<Primitive> Return, [1]: [CNode]8573}
+
+
+# [No.11] ✓↓construct.8506
+# In file /mnt/sda1/xzstu/ly/SememeWSD-main/bert/src/bert_model.py(199)/        if not self.use_relative_positions:/
+funcgraph fg_8506[fg_8505](
+) {
+    %1 : Slice[None : None : None] = DoSignaturePrimitive::S-Prim-make_slice{prim_type=1}(None, None, None)    #(NoneType, NoneType, NoneType) #scope: Default/lamb_m-BertNetworkForMask/bert-BertMask/bert-BertModel/bert_embedding_postprocessor-EmbeddingPostprocessor
+      # In file /mnt/sda1/xzstu/ly/SememeWSD-main/bert/src/bert_model.py(201)/            position_ids = self.position_ids[:, :shape[1]]/#[CNode]8575
+    %2 : Tuple[I64*3] = FuncGraph::fg_8576(%para229)    #(Tensor(F32)[1, 129, 768])    # fg_8576=shape.8576 #scope: Default/lamb_m-BertNetworkForMask/bert-BertMask/bert-BertModel/bert_embedding_postprocessor-EmbeddingPostprocessor
+      # In file /mnt/sda1/xzstu/ly/SememeWSD-main/bert/src/bert_model.py(200)/            shape = F.shape(output)/#shape
+    %3 : I64 = DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%2, I64(1))    #(Tuple[I64*3], I64) #scope: Default/lamb_m-BertNetworkForMask/bert-BertMask/bert-BertModel/bert_embedding_postprocessor-EmbeddingPostprocessor
+      # In file /mnt/sda1/xzstu/ly/SememeWSD-main/bert/src/bert_model.py(201)/            position_ids = self.position_ids[:, :shape[1]]/#[CNode]8577
+    %4 : Slice[None : Int64 : None] = DoSignaturePrimitive::S-Prim-make_slice{prim_type=1}(None, %3, None)    #(NoneType, I64, NoneType) #scope: Default/lamb_m-BertNetworkForMask/bert-BertMask/bert-BertModel/bert_embedding_postprocessor-EmbeddingPostprocessor
+      # In file /mnt/sda1/xzstu/ly/SememeWSD-main/bert/src/bert_model.py(201)/            position_ids = self.position_ids[:, :shape[1]]/#[CNode]8578
+    %5 : Tuple[Slice[None : None : None],Slice[None : Int64 : None]] = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}(%1, %4)    #(Slice[None : None : None], Slice[None : Int64 : None]) #scope: Default/lamb_m-BertNetworkForMask/bert-BertMask/bert-BertModel/bert_embedding_postprocessor-EmbeddingPostprocessor
+      # In file /mnt/sda1/xzstu/ly/SememeWSD-main/bert/src/bert_model.py(201)/            position_ids = self.position_ids[:, :shape[1]]/#[CNode]8579
+    %6 : Tensor(I32)[1, 128] = DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(Tensor(34)[1, 128], %5)    #(Tensor(I32)[1, 128], Tuple[Slice[None : None : None],Slice[None : Int64 : None]]) #scope: Default/lamb_m-BertNetworkForMask/bert-BertMask/bert-BertModel/bert_embedding_postprocessor-EmbeddingPostprocessor
+      # In file /mnt/sda1/xzstu/ly/SememeWSD-main/bert/src/bert_model.py(201)/            position_ids = self.position_ids[:, :shape[1]]/#position_ids
+    %7 : Tensor(F32)[1, 128, 768] = FuncGraph::fg_8580(%6)    #(Tensor(I32)[1, 128])    # fg_8580=construct.8580 #scope: Default/lamb_m-BertNetworkForMask/bert-BertMask/bert-BertModel/bert_embedding_postprocessor-EmbeddingPostprocessor
+      # In file /mnt/sda1/xzstu/ly/SememeWSD-main/bert/src/bert_model.py(202)/            position_embeddings = self.full_position_embedding(position_ids)/#position_embeddings
+
+#------------------------> 10
+    %8 = DoSignaturePrimitive::S-Prim-Add{prim_type=1}[output_names=["output"], input_names=["x", "y"]](%para229, %7)    #(Tensor(F32)[1, 129, 768], Tensor(F32)[1, 128, 768]) #scope: Default/lamb_m-BertNetworkForMask/bert-BertMask/bert-BertModel/bert_embedding_postprocessor-EmbeddingPostprocessor
+      # In file /mnt/sda1/xzstu/ly/SememeWSD-main/bert/src/bert_model.py(203)/            output = self.add(output, position_embeddings)/#output
+    Primitive::Return{prim_type=1}(%8)    #(Undefined) #scope: Default/lamb_m-BertNetworkForMask/bert-BertMask/bert-BertModel/bert_embedding_postprocessor-EmbeddingPostprocessor
+      # In file /mnt/sda1/xzstu/ly/SememeWSD-main/bert/src/bert_model.py(199)/        if not self.use_relative_positions:/#[CNode]8581
+}
+# order:
+#   1: ✓↓construct.8506:shape{[0]: ValueNode<FuncGraph> shape.8576, [1]: Φoutput}
+#   2: ✓↓construct.8506:[CNode]8575{[0]: ValueNode<DoSignaturePrimitive> S-Prim-make_slice, [1]: ValueNode<None> None, [2]: ValueNode<None> None, [3]: ValueNode<None> None}
+#   3: ✓↓construct.8506:[CNode]8577{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: shape, [2]: ValueNode<Int64Imm> 1}
+#   4: ✓↓construct.8506:[CNode]8578{[0]: ValueNode<DoSignaturePrimitive> S-Prim-make_slice, [1]: ValueNode<None> None, [2]: [CNode]8577, [3]: ValueNode<None> None}
+#   5: ✓↓construct.8506:[CNode]8579{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: [CNode]8575, [2]: [CNode]8578}
+#   6: ✓↓construct.8506:position_ids{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: ValueNode<Tensor> Tensor(shape=[1, 128], dtype=Int32, value=[...]), [2]: [CNode]8579}
+#   7: ✓↓construct.8506:position_embeddings{[0]: ValueNode<FuncGraph> construct.8580, [1]: position_ids}
+#   8: ✓↓construct.8506:output{[0]: ValueNode<DoSignaturePrimitive> S-Prim-Add, [1]: Φoutput, [2]: position_embeddings}
+#   9: ✓↓construct.8506:[CNode]8581{[0]: ValueNode<Primitive> Return, [1]: output}
+
+
+#===============================================================================
+# num of function graphs in stack: 11/12 (Ignored 1 internal frames).
